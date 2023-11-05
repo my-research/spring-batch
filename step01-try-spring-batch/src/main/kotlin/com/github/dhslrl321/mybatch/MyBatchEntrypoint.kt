@@ -1,5 +1,6 @@
 package com.github.dhslrl321.mybatch
 
+import mu.KotlinLogging
 import org.springframework.batch.core.Job
 import org.springframework.batch.core.JobParameter
 import org.springframework.batch.core.JobParameters
@@ -15,3 +16,5 @@ class MyBatchEntrypoint
 fun main(args: Array<String>) {
     runApplication<MyBatchEntrypoint>(*args)
 }
+
+val logger = KotlinLogging.logger {}

@@ -13,15 +13,6 @@ import org.springframework.context.annotation.Configuration
 class BatchConfiguration(
     private val jobRepository: JobRepository,
 ) {
-    /*@Bean
-    fun jobRunner(jobLauncher: JobLauncher, job: Job): ApplicationRunner {
-        return ApplicationRunner {
-            val jobParameters = JobParameters(mapOf("a" to JobParameter("hello", String::class.java)))
-            val execution = jobLauncher.run(job, jobParameters)
-            println("Job Execution Status: ${execution.status}")
-        }
-    }*/
-
     @Bean
     @Throws(Exception::class)
     fun jobLauncher(): JobLauncher {
