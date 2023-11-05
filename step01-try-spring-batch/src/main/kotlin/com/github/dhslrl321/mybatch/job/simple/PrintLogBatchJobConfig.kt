@@ -1,6 +1,6 @@
-package com.github.dhslrl321.mybatch
+package com.github.dhslrl321.mybatch.job.simple
 
-import mu.KotlinLogging
+import com.github.dhslrl321.mybatch.logger
 import org.springframework.batch.core.Job
 import org.springframework.batch.core.Step
 import org.springframework.batch.core.job.builder.JobBuilder
@@ -13,32 +13,31 @@ import org.springframework.transaction.PlatformTransactionManager
 
 
 @Configuration
-class UserUpdateJobConfiguration {
-
+class PrintLogBatchJobConfig {
 
     companion object {
-        private const val JOB_NAME = "UPDATE_USER_JOB"
-        private const val STEP_NAME = "UPDATE_USER_STEP"
+        const val JOB_NAME = "print log"
+        const val STEP_NAME = "PRINT_LOG_STEP"
     }
 
-    @Bean
-    fun updateUserJob(jobRepository: JobRepository, transactionManager: PlatformTransactionManager): Job {
+    @Bean(JOB_NAME)
+    fun printLogJob(jobRepository: JobRepository, transactionManager: PlatformTransactionManager): Job {
         return JobBuilder(JOB_NAME, jobRepository)
-            .start(updateUserStep(jobRepository, transactionManager))
+            .start(printLogStep(jobRepository, transactionManager))
             .build()
     }
 
-    @Bean
-    fun updateUserStep(jobRepository: JobRepository, transactionManager: PlatformTransactionManager): Step {
+    @Bean(JOB_NAME + STEP_NAME)
+    fun printLogStep(jobRepository: JobRepository, transactionManager: PlatformTransactionManager): Step {
         return StepBuilder(STEP_NAME, jobRepository)
-            .tasklet(updateUserTasklet(), transactionManager)
+            .tasklet(printLogTasklet(), transactionManager)
             .build()
     }
 
     @Bean
-    fun updateUserTasklet(): Tasklet {
+    fun printLogTasklet(): Tasklet {
         return Tasklet { _, _ ->
-            println("Hello, Spring Batch!! updating user")
+            logger.info {"Hello Spring Batch!"}
             null
         }
     }
