@@ -40,7 +40,7 @@ class TodoBatchConfig(
         return StepBuilder(STEP_NAME, jobRepository)
             .chunk<Todo, Todo>(2, transactionManager)
             .reader(reader.jdbcCursorItemReader())
-            .processor(appendExclamationProcessor)
+            .processor(appendExclamationProcessor) // only one processor
             .writer(writer)
             .build()
     }
