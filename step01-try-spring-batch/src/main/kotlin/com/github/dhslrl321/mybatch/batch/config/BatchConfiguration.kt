@@ -1,4 +1,4 @@
-package com.github.dhslrl321.mybatch
+package com.github.dhslrl321.mybatch.batch.config
 
 import org.springframework.batch.core.configuration.annotation.EnableBatchProcessing
 import org.springframework.batch.core.launch.JobLauncher

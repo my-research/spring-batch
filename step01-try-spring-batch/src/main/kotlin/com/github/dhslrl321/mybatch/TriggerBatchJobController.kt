@@ -1,7 +1,7 @@
 package com.github.dhslrl321.mybatch
 
-import com.github.dhslrl321.mybatch.job.simple.PrintLogBatchJobConfig
-import com.github.dhslrl321.mybatch.job.todos.TodoBatchConfig
+import com.github.dhslrl321.mybatch.batch.simple.PrintLogBatchJobConfig
+import com.github.dhslrl321.mybatch.batch.job.TodoBatchJobConfig
 import org.springframework.batch.core.Job
 import org.springframework.batch.core.JobParameter
 import org.springframework.batch.core.JobParameters
@@ -16,7 +16,7 @@ import java.time.Instant
 class TriggerBatchJobController(
     private val jobLauncher: JobLauncher,
     @Qualifier(PrintLogBatchJobConfig.JOB_NAME) private val printLogJob: Job,
-    @Qualifier(TodoBatchConfig.JOB_NAME) private val todoJob: Job,
+    @Qualifier(TodoBatchJobConfig.JOB_NAME) private val todoJob: Job,
 ) {
     @GetMapping("/batch/print-log")
     fun printLog(): ResponseEntity<String> {

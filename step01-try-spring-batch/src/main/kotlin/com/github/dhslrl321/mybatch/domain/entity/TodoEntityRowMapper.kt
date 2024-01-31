@@ -1,4 +1,4 @@
-package com.github.dhslrl321.mybatch.job.todos.entity
+package com.github.dhslrl321.mybatch.domain.entity
 
 import org.springframework.jdbc.core.RowMapper
 import org.springframework.stereotype.Component

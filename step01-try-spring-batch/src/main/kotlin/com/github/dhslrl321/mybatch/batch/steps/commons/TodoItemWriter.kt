@@ -1,6 +1,6 @@
-package com.github.dhslrl321.mybatch.job.todos.step
+package com.github.dhslrl321.mybatch.batch.steps.commons
 
-import com.github.dhslrl321.mybatch.job.todos.entity.Todo
+import com.github.dhslrl321.mybatch.domain.entity.Todo
 import org.springframework.batch.item.Chunk
 import org.springframework.batch.item.ItemWriter
 import org.springframework.jdbc.core.JdbcTemplate

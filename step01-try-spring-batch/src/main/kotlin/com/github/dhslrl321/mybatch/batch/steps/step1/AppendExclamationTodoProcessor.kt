@@ -1,6 +1,6 @@
-package com.github.dhslrl321.mybatch.job.todos.step
+package com.github.dhslrl321.mybatch.batch.steps.step1
 
-import com.github.dhslrl321.mybatch.job.todos.entity.Todo
+import com.github.dhslrl321.mybatch.domain.entity.Todo
 import org.springframework.batch.item.ItemProcessor
 import org.springframework.stereotype.Component
 
