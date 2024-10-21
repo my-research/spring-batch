@@ -11,14 +11,14 @@ import org.springframework.context.annotation.Configuration
 @Configuration
 @EnableBatchProcessing
 class BatchConfiguration(
-    private val jobRepository: JobRepository,
+  private val jobRepository: JobRepository,
 ) {
-    @Bean
-    @Throws(Exception::class)
-    fun jobLauncher(): JobLauncher {
-        val jobLauncher = TaskExecutorJobLauncher()
-        jobLauncher.setJobRepository(jobRepository)
-        jobLauncher.afterPropertiesSet()
-        return jobLauncher
-    }
+  @Bean
+  @Throws(Exception::class)
+  fun jobLauncher(): JobLauncher {
+    val jobLauncher = TaskExecutorJobLauncher()
+    jobLauncher.setJobRepository(jobRepository)
+    jobLauncher.afterPropertiesSet()
+    return jobLauncher
+  }
 }

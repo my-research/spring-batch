@@ -5,10 +5,10 @@ import org.springframework.batch.item.ItemProcessor
 import org.springframework.stereotype.Component
 
 @Component
-class AppendQuestionMarkTodoProcessor: ItemProcessor<Todo, Todo> {
-    override fun process(item: Todo): Todo {
-        item.appendQuestionMarkToName()
-        println("[processor(?)]: $item")
-        return item
-    }
+class AppendQuestionMarkTodoProcessor : ItemProcessor<Todo, Todo> {
+  override fun process(item: Todo): Todo {
+    item.appendQuestionMarkToName()
+    println("[processor(?)]: $item")
+    return item
+  }
 }

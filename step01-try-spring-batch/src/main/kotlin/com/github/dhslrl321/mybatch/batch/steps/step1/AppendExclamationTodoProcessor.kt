@@ -5,10 +5,10 @@ import org.springframework.batch.item.ItemProcessor
 import org.springframework.stereotype.Component
 
 @Component
-class AppendExclamationTodoProcessor: ItemProcessor<Todo, Todo> {
-    override fun process(item: Todo): Todo {
-        item.appendExclamationToName()
-        println("[processor(!)]: $item")
-        return item
-    }
+class AppendExclamationTodoProcessor : ItemProcessor<Todo, Todo> {
+  override fun process(item: Todo): Todo {
+    item.appendExclamationToName()
+    println("[processor(!)]: $item")
+    return item
+  }
 }
