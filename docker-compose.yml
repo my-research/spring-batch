@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:latest
+    container_name: local-my-test-db
+    environment:
+      POSTGRES_DB: my-test-db
+      POSTGRES_USER: my-test-db
+      POSTGRES_PASSWORD: my-test-db
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./docker/schema:/docker-entrypoint-initdb.d  # Mount the initialization scripts

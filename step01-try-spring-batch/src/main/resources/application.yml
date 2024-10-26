@@ -1,9 +1,9 @@
 spring:
   datasource:
-    url: jdbc:mysql://localhost:3306/my-test-db?serverTimezone=UTC&characterEncoding=UTF-8
+    url: jdbc:postgresql://localhost:5432/my-test-db
     username: my-test-db
     password: my-test-db
-    driver-class-name: com.mysql.cj.jdbc.Driver
+    driver-class-name: org.postgresql.Driver
   batch:
     jdbc:
       initialize-schema: always

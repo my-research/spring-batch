@@ -9,6 +9,7 @@ class AppendExclamationTodoProcessor : ItemProcessor<Todo, Todo> {
   override fun process(item: Todo): Todo {
     item.appendExclamationToName()
     println("[processor(!)]: $item")
+    throw IllegalStateException("hello")
     return item
   }
 }
