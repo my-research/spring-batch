@@ -16,4 +16,3 @@ class TodoEntityRowMapper : RowMapper<Todo> {
     )
   }
 }
-  
